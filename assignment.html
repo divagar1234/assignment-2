@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moving Car Animation</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+.sky {
+    height: 65vh;
+    background: linear-gradient(#55c8ff, #d9f5ff);
+    position: relative;
+    overflow: hidden;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 30px;
+    color: #174b7a;
+}
+
+.sun {
+    position: absolute;
+    top: 70px;
+    right: 100px;
+    width: 70px;
+    height: 70px;
+    background: #ffdb35;
+    border-radius: 50%;
+    box-shadow: 0 0 35px #ffe88a;
+}
+
+.cloud {
+    position: absolute;
+    font-size: 60px;
+    animation: clouds 12s linear infinite;
+}
+
+.cloud1 {
+    top: 100px;
+    left: -100px;
+}
+
+.cloud2 {
+    top: 190px;
+    left: -250px;
+    animation-delay: 4s;
+}
+
+@keyframes clouds {
+    from { transform: translateX(0); }
+    to { transform: translateX(120vw); }
+}
+
+.grass {
+    height: 10vh;
+    background: #48bd48;
+}
+
+.road {
+    height: 25vh;
+    background: #414141;
+    position: relative;
+    border-top: 5px solid white;
+}
+
+.line {
+    position: absolute;
+    top: 50%;
+    width: 200%;
+    border-top: 6px dashed white;
+    animation: road 1s linear infinite;
+}
+
+@keyframes road {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100px); }
+}
+
+.car {
+    position: absolute;
+    width: 180px;
+    height: 65px;
+    bottom: 55px;
+    left: -200px;
+    animation: drive 6s linear infinite;
+}
+
+.car-body {
+    position: absolute;
+    bottom: 10px;
+    width: 180px;
+    height: 42px;
+    background: #f52235;
+    border-radius: 20px 35px 8px 8px;
+    border: 3px solid #a50d1c;
+}
+
+.window {
+    position: absolute;
+    top: -28px;
+    left: 45px;
+    width: 90px;
+    height: 35px;
+    background: #ff3045;
+    border-radius: 30px 35px 0 0;
+    border: 3px solid #a50d1c;
+}
+
+.glass {
+    position: absolute;
+    top: 4px;
+    left: 10px;
+    width: 65px;
+    height: 20px;
+    background: #a9eaff;
+    border-radius: 12px 15px 0 0;
+}
+
+.wheel {
+    position: absolute;
+    bottom: 0;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #171717;
+    border: 5px solid #777;
+    animation: rotate 0.5s linear infinite;
+}
+
+.wheel::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+}
+
+.wheel1 { left: 25px; }
+.wheel2 { right: 25px; }
+
+@keyframes rotate {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes drive {
+    from { left: -200px; }
+    to { left: 110%; }
+}
+
+footer {
+    background: #202020;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="sky">
+    <h1>🚗 Moving Car Animation</h1>
+    <div class="sun"></div>
+    <div class="cloud cloud1">☁️</div>
+    <div class="cloud cloud2">☁️</div>
+</div>
+
+<div class="grass"></div>
+
+<div class="road">
+    <div class="line"></div>
+
+    <div class="car">
+        <div class="window">
+            <div class="glass"></div>
+        </div>
+
+        <div class="car-body"></div>
+
+        <div class="wheel wheel1"></div>
+        <div class="wheel wheel2"></div>
+    </div>
+</div>
+
+<footer>
+    Simple Moving Car Website | HTML & CSS
+</footer>
+
+</body>
+</html>
